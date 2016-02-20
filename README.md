@@ -1,2 +1,2 @@
 # AutomateSynchronization
-[link](http://paveltimofeev.github.io/AutomateSynchronization/)
+[link](https://paveltimofeev.github.io/AutomateSynchronization/)
