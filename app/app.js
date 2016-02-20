@@ -1,7 +1,6 @@
 function Auth()
 {
   console.log('Auth');
-  
   PDK.login({ scope: 'read_public, write_public'}, function (response) {
   
     if (!response || response.error) {
@@ -10,6 +9,13 @@ function Auth()
   
     console.log(response);
   });
+}
+
+
+function Logout()
+{
+  console.log('Logout');
+  PDK.logout();
 }
 
 
@@ -94,6 +100,7 @@ function MoveLatestPin( fromBoard, toBoard ){
     
     console.log( uri );
     console.log( params );
+    console.log( PDK.getSession().accessToken );
     
     PDK.request( uri, "PATCH", function( resp ) { 
     
