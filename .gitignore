@@ -1,5 +1,6 @@
 data/
 logs/
+screenshots/
 node_modules/
 ssl/
 .sh

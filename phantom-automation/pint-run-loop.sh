@@ -14,7 +14,7 @@ EVERY=600;
 while true; 
 do
 
-"/C/Program Files/phantomjs-2.0.0/bin/phantomjs.exe" /C/Temp/phantomjs-test/pint-run.js 2>&1 | tee logs/pint-run.log
+"/C/Program Files/phantomjs-2.0.0/bin/phantomjs.exe" ./pint-run.js 2>&1 | tee logs/pint-run.log
 
 echo wait for $EVERY sec, till $(date --d="now + $EVERY seconds")
 sleep $EVERY; 
