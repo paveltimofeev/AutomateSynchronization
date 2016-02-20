@@ -1,3 +1,19 @@
+function Init()
+{
+    setTimeout( //remove it
+        function(){
+        
+            PDK.me(function(user){
+                    user.greeting = "Hello, ";
+                    ReactDOM.render( 
+                        factory( user.data ), 
+                        document.getElementById('r-header') );
+                    });
+        }, 
+        100);
+}
+
+
 function Auth()
 {
   console.log('Auth');
@@ -8,6 +24,16 @@ function Auth()
     }
   
     console.log(response);
+    
+    PDK.me(function(user){
+        
+        console.log(user);
+        
+        user.greeting = "Hello, ";
+        ReactDOM.render( 
+            factory( user.data ), 
+            document.getElementById('r-header') );
+    });
   });
 }
 
@@ -16,6 +42,9 @@ function Logout()
 {
   console.log('Logout');
   PDK.logout();
+  ReactDOM.render( 
+            factory( { greeting: "Welcome back, we will miss you" } ), 
+            document.getElementById('r-header') );
 }
 
 
@@ -113,3 +142,16 @@ function MoveLatestPin( fromBoard, toBoard ){
   });
 }
 
+
+var myApp = React.createClass({   
+    render: function() {
+                return React.DOM.span( null,  
+                        (this.props.greeting || 'Hello, ') + 
+                        (this.props.first_name || '') + ' ' + 
+                        (this.props.last_name || '') );
+            }
+});
+
+var factory = React.createFactory(myApp);
+    
+Init();
