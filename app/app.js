@@ -89,11 +89,13 @@ function MoveLatestPin( fromBoard, toBoard ){
     uri = '/v1/pins/'+pin.id+'/';
     params = {                  
               pin: pin.id,
-              board: toBoard,
-              link:'https://anime-figures.com'
+              board: toBoard
             };
     
-    PDK.request( uri, 'patch', params, function( resp ) { 
+    console.log( uri );
+    console.log( params );
+    
+    PDK.request( uri, "PATCH", function( resp ) { 
     
       if ( !resp || resp.error ) 
         console.log( resp.error || 'Error occurred' );
