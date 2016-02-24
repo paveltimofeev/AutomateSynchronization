@@ -14,21 +14,29 @@ if( !system.env.PINT_PASSW )
 
 function getRundomUrl()
 {
-    var targets = 
-    [
-    //'https://ru.pinterest.com',
-    'https://ru.pinterest.com/search/pins/?q=anime&rs=typed&0=anime|typed',
-    'https://ru.pinterest.com/search/pins/?q=anime%20figurine&rs=typed&0=anime|typed&1=figurine|typed',
-    'https://ru.pinterest.com/search/pins/?q=figma&rs=typed&0=figma|typed',
-    'https://ru.pinterest.com/search/pins/?q=vocaloid&rs=typed&0=vocaloid|typed',
-    'https://ru.pinterest.com/search/pins/?q=sonico&rs=typed&0=sonico%7Ctyped',
-    'https://ru.pinterest.com/search/pins/?q=animu&rs=typed&0=animu%7Ctyped',
-    'https://ru.pinterest.com/search/pins/?q=manga&rs=typed&0=manga%7Ctyped',
-    'https://ru.pinterest.com/search/pins/?q=attack%20on%20titan&rs=remove&0=attack%20on%20titan%7Cguide%7Cword%7C9&remove_refine=animu%7Ctyped',
-    'https://ru.pinterest.com/search/pins/?q=cosplay&rs=typed&0=cosplay%7Ctyped&remove_refine=sonico%7Ctyped'
+    var terms = [
+        'anime figurine',
+        'anime figure',
+        'figma',
+        'vocaloid',
+        'anime',
+        'manga',
+        'sonico',
+        'animu',
+        'neko',
+        'chibi',
+        'Moe', 
+        'Neko Atsume', 
+        'Catgirl', 
+        'Miko anime', 
+        'miko anime art',
+        'attack on titan',
+        'cosplay'
     ];
     
-    return targets[parseInt(Math.random() * targets.length)];
+    var term = terms[parseInt(Math.random() * terms.length)].replace(/ /gi, '%20');
+    
+    return 'https://ru.pinterest.com/search/pins/?q=' + term + '&rs=typed&0=' + term + '|typed';
 }
 
 function totalIncrement( incr )

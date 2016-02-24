@@ -4,13 +4,17 @@ echo "Enter password: "
 read -ers passw
 clear
 
+echo "Enter timeout (sec.): "
+read timeout
+clear
+
 export PINT_LOGIN=animestore@patico.pro
 export PINT_PASSW=$passw
 
 # 3600 - 1H
 # 1800 - 30 min
 #   60 -  1 min
-EVERY=600;
+EVERY=$timeout;
 while true; 
 do
 
