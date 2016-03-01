@@ -50,8 +50,8 @@ core.processing( 'http://gelbooru.com/index.php?page=account&s=login&code=00', {
                     inputs[6].click();
                 }, 
                 {
-                    sourceurl: 'https://anime-figures.com/blogs/news/post?472789790', 
-                    title: 'mecha', 
+                    sourceurl: 'https://anime-figures.com/blogs/news/?utm_source=glb&post=16-' + parseInt(Math.random() * 10000), 
+                    title: 'Cute anime', 
                     tags:' 1girl blue_eyes dress solo white_dress soniani super_sonico large_breasts long_hair'
                 } );
                 
