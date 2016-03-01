@@ -12,17 +12,28 @@ function createArticle( article )
     document.getElementsByClassName('btn js-show-edit-website-seo btn--link')[0].click();
     
     var inputs = document.getElementsByTagName('input');
+    inputs[3].focus();
     inputs[3].value = article.title;
     inputs[5].value = article.seotitle || article.title;
     inputs[6].value = article.visible || false;
     
     var tas = document.getElementsByTagName('textarea');    
+    tas[0].focus();
     tas[0].value = article.content;
-    inputs[1].value = article.excerpt || '';
-    inputs[2].value = article.metatag || article.title;
+    tas[1].value = article.excerpt || '';
+    tas[2].value = article.metatag || article.title;
     
-    inputs[14].click();
+    var buttons = document.getElementsByTagName('button');    
+    buttons[6].click();
+    //inputs[14].click();
+}
+
+function clickSave()
+{
+    var buttons = document.getElementsByTagName('button');    
+    buttons[6].click();
 }
 
 exports.js_login = login;
 exports.js_createArticle = createArticle;
+exports.js_clickSave = clickSave;

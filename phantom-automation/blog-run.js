@@ -28,6 +28,7 @@ core.processing( 'https://animefigurines.myshopify.com/admin/articles/new', { vi
               {
                 core.makeScreenshot( p, '-creating-article' );
                 
+                p.sendEvent('click', 350, 135);
                 var result = p.evaluate( 
                     blog.js_createArticle, {
                         title : 'test_title',
@@ -37,8 +38,15 @@ core.processing( 'https://animefigurines.myshopify.com/admin/articles/new', { vi
                         metatag : 'test_meta',
                         visible : false
                     });
-                    
+                
+                p.sendEvent('click', 450, 300);
                 core.makeScreenshot( p, '-entered-values' );
+              },
+              
+              function()
+              {
+                  p.evaluate( blog.js_clickSave, null );
+                  core.makeScreenshot( p, '-clicked' );
               },
               
               
